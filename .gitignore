@@ -29,3 +29,4 @@ override.tf.json
 
 # Allow pushing specific large binaries (example)
 !your-bigfile.zip
+.terraform/
