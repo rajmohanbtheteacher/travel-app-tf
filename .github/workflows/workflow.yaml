@@ -29,15 +29,15 @@ jobs:
       run: terraform validate
 
     - name: Terraform Plan
-      run: terraform plan -var-file=dev.tfvars
+      run: terraform plan -var-file=travel-app/dev.tfvars
 
     - name: Terraform Apply (Test Environment)
       if: github.event_name == 'pull_request'
-      run: terraform apply -auto-approve -var-file=dev.tfvars
+      run: terraform apply -auto-approve -var-file=travel-app/dev.tfvars
 
     - name: Terraform Apply (Production)
       if: github.event_name == 'push'
-      run: terraform apply -auto-approve -var-file=prod.tfvars
+      run: terraform apply -auto-approve -var-file=travel-app/prod.tfvars
 
     - name: Cleanup Test Environment
       if: github.event_name == 'pull_request' && github.event.action == 'closed'
