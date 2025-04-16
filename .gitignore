@@ -1,0 +1,31 @@
+# Ignore .terraform/ directory — stores downloaded providers/modules
+.terraform/
+
+# Ignore Terraform state files
+*.tfstate
+*.tfstate.backup
+
+# Ignore crash logs
+crash.log
+
+# Ignore variable files that may contain secrets
+*.tfvars
+*.tfvars.json
+
+# Ignore plan output
+*.tfplan
+
+# Ignore override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Ignore provider lock file (optional — include if you want reproducibility)
+# .terraform.lock.hcl
+
+# But keep provider binaries (like terraform-provider-xyz)
+!terraform-provider-*
+
+# Allow pushing specific large binaries (example)
+!your-bigfile.zip
